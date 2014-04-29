@@ -96,3 +96,19 @@ def maxList(l):
 def sumByReduce():
 	a = reduce(lambda x,y:x+y ,range(1,101))
 	print "Problem 9=>Sum of fist 100 num is ",a
+
+
+'''10) Write a program for following operation into the file?'''
+def fileOperations():
+	try:
+		with open('myfile.txt','r+') as f:
+		
+			print "Problem 10=>Read()",f.read()
+			f.seek(0)
+			print "Problem 10=>readline()",f.readline()
+			f.truncate()
+			f.writelines(['this is 1st line\n','this is 2nd line\n','this is 3rd line\n','this is 4th line\n'])
+			f.seek(34)
+			print "Problem 10=>readlines() after seek(34)",f.readlines()
+	except IOError:
+		print "Problem 10 => Please give the right location of your file"
