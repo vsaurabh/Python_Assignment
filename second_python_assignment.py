@@ -6,3 +6,25 @@
 
 			Deep Copy : In deep copy, not only all the fields of an object are copied, 
 						all the dynamically allocated memory address which are pointed by that object are also copied.'''
+
+
+'''2) Consider This scenario
+		Since both are shallow copies, why is that the dict.copy() doesn't work as expected ??'''
+
+''' Ans) original = dict(a=1, b=2)
+		>>> new = original.copy()
+		>>> new.update({'c': 3})
+		>>> original
+		{'a': 1, 'b': 2}
+		>>> new
+		{'a': 1, 'c': 3, 'b': 2}
+
+		we are creating a new dict which is a copy of the references of objects contained in the original dictionary.
+
+		>>> original = [1, 2, 3]
+		>>> new = original
+		>>> new.append(4)
+		>>> new, original
+		([1, 2, 3, 4], [1, 2, 3, 4])
+
+		we are creating a new reference to the the list referenced by original.'''
