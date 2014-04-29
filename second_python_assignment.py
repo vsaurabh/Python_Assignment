@@ -146,10 +146,28 @@ def fileReverse():
 		    finally:
 		        print "d"
 
-		f()'''
+		f()
 
 
-	'''ANs) Output:
+	ANs) Output:
 			a
 			d
 		Because we use return after the try block so it will not execute the else part.'''
+
+
+'''14) Write a function interchange keys and values in a dictionary. For simplicity, assume that all values are unique.
+
+		>>> {'x': 1, 'y': 2, 'z': 3}
+		{1: 'x', 2: 'y', 3: 'z'}'''
+
+def interchangeKeyValue(d):
+	try:
+		keys = d.keys()
+		values = d.values()
+		interchange_Dict = {}
+		for i in range(len(b)):
+			interchange_Dict[values[i]] = keys[i]
+		print "Problem 11 =>", interchange_Dict
+	except:
+		print "Problem 8=> Please pass a dictionary"
+
