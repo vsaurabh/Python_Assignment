@@ -1,3 +1,5 @@
+import os
+
 '''1) What is compound Object ?? Corelate in terms of deep and shallow copy ??
 	Ans) compound objects are objects which contains objects, like lists or dict or classes.
 			Shallow Copy : In shallow copy, a new object is created which contains the exact copy of the values in the original object. 
@@ -40,3 +42,13 @@ def fibona(n):
 			list_fib.append(b)
 		print "Problem 3=>",list_fib,
 	return inner(n)
+
+
+'''4) write a python program to list all files contains in a directory 'MyDir' placed in your home directory'''
+def files():
+	try:
+		location_dir = "/home/MyDir"
+		a = os.listdir(location_dir)
+		print "Problem 4=>", a
+	except:
+		print "Problem 4=> Please give the right location of your directory"
