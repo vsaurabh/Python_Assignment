@@ -112,3 +112,23 @@ def fileOperations():
 			print "Problem 10=>readlines() after seek(34)",f.readlines()
 	except IOError:
 		print "Problem 10 => Please give the right location of your file"
+
+
+'''11)Write a program to print each line of a file in reverse order.	   
+		Ex:
+		   cat file.txt
+		She sells seashells on the seashore;
+		The shells that she sells are seashells I'm sure.
+		So if she sells seashells on the seashore,
+
+		Reverse order:
+		So if she sells seashells on the seashore,
+		The shells that she sells are seashells I'm sure.
+		She sells seashells on the seashore;'''
+def fileReverse():
+	try:
+		with open('cat file.txt','r+') as f:
+			for i in reversed(f.readlines()):
+				print "Problem 11 =>",i
+	except IOError:
+		print "Problem 11 => Please give the right location of your file"
