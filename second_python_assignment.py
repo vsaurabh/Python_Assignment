@@ -40,7 +40,7 @@ def fibona(n):
 		for i in range(n):
 			a, b = b , a+b
 			list_fib.append(b)
-		print "Problem 3=>",list_fib,
+		print "Problem 3=>",list_fib,"\n"
 	return inner(n)
 
 
@@ -49,17 +49,17 @@ def files():
 	try:
 		location_dir = "/home/MyDir"
 		a = os.listdir(location_dir)
-		print "Problem 4=>", a
+		print "Problem 4=>", a,"\n"
 	except:
-		print "Problem 4=> Please give the right location of your directory"
+		print "Problem 4=> Please give the right location of your directory","\n"
 
 
 '''5) write a program which will perform certain mathematical operations. Write a program in such a manner that it should always return  something ?? Even on failure'''
 def add(x,y):
 	try:
-		print "Problem 5=>",x+y
+		print "Problem 5=>",x+y,"\n"
 	except:
-		print "Problem 5=>some random even num=>",random.randrange(2,100,2)
+		print "some random even num=>",random.randrange(2,100,2),"\n"
 
 
 '''6) Write a program for following outputs by using map?
@@ -71,8 +71,8 @@ def evnodd(x):
     else:
         return 0
 
-print "Problem 6 (a) =>", map(evnodd, range(10))
-print "Problem 6 (b) =>", map(lambda x: x+2,range(1,9,2))
+print "Problem 6 (a) =>", map(evnodd, range(10)),"\n"
+print "Problem 6 (b) =>", map(lambda x: x+2,range(1,9,2)),"\n"
 
 '''7) Write Fibonacci series program by using filter ?'''
 def fibFilter(n):
@@ -80,22 +80,22 @@ def fibFilter(n):
     for i in range(n):
     	a, b = a+b, a
     print a,
-print "Problem 7=>",filter(fibFilter,range(10))
+print "Problem 7=>",filter(fibFilter,range(10)),"\n"
 
 
 '''8) Write a program to determine the maximum of a list of numerical values by using reduce ?'''
 def maxList(l):
 	try:
 		a = reduce(lambda a,b: a if(a>b)else b, l)
-		print "Problem 8=>max num is",a
+		print "Problem 8=>max num is",a,"\n"
 	except:
-		print "Problem 8=> Please pass a list"
+		print "Problem 8=> Please pass a list","\n"
 
 
 '''9) Write a program to calculate the sum of the numbers from 1 to 100 by using reduce ?'''
 def sumByReduce():
 	a = reduce(lambda x,y:x+y ,range(1,101))
-	print "Problem 9=>Sum of fist 100 num is ",a
+	print "Problem 9=>Sum of fist 100 num is ",a,"\n"
 
 
 '''10) Write a program for following operation into the file?'''
@@ -103,15 +103,15 @@ def fileOperations():
 	try:
 		with open('myfile.txt','r+') as f:
 		
-			print "Problem 10=>Read()",f.read()
+			print "Problem 10=>Read()",f.read(),"\n"
 			f.seek(0)
-			print "Problem 10=>readline()",f.readline()
+			print "Problem 10=>readline()",f.readline(),"\n"
 			f.truncate()
 			f.writelines(['this is 1st line\n','this is 2nd line\n','this is 3rd line\n','this is 4th line\n'])
 			f.seek(34)
-			print "Problem 10=>readlines() after seek(34)",f.readlines()
+			print "Problem 10=>readlines() after seek(34)",f.readlines(),"\n"
 	except IOError:
-		print "Problem 10 => Please give the right location of your file"
+		print "Problem 10 => Please give the right location of your file","\n"
 
 
 '''11)Write a program to print each line of a file in reverse order.	   
@@ -129,9 +129,9 @@ def fileReverse():
 	try:
 		with open('cat file.txt','r+') as f:
 			for line in reversed(f.readlines()):
-				print "Problem 11 =>",line
+				print "Problem 11 =>",line,"\n"
 	except IOError:
-		print "Problem 11 => Please give the right location of your file"
+		print "Problem 11 => Please give the right location of your file","\n"
 
 
 '''12)What will be the output of the following program?
@@ -155,6 +155,20 @@ def fileReverse():
 		Because we use return after the try block so it will not execute the else part.'''
 
 
+'''13)Write a program to find anagrams in a given list of words. Two words are called anagrams 
+		if one word can be formed by rearranging letters of another.
+		'''
+def anagrams_words(list_words):
+	dict_angrams = {}
+	for words in list_words:
+		key = str(''.join(sorted(words)))
+		if key in dict_angrams:
+			dict_angrams[key].append(words)
+		else:
+			dict_angrams[key]= [words]
+			list_anagrams = [value for key,value in dict_angrams.items()]
+	print "Problem 13 =>", list_anagrams,"\n"
+
 '''14) Write a function interchange keys and values in a dictionary. For simplicity, assume that all values are unique.
 
 		>>> {'x': 1, 'y': 2, 'z': 3}
@@ -167,7 +181,24 @@ def interchangeKeyValue(d):
 		interchange_Dict = {}
 		for i in range(len(b)):
 			interchange_Dict[values[i]] = keys[i]
-		print "Problem 11 =>", interchange_Dict
+		print "Problem 14 =>", interchange_Dict,"\n"
 	except:
-		print "Problem 8=> Please pass a dictionary"
+		print "Problem 14=> Please pass a dictionary","\n"
 
+
+def main():
+	fibona(10)
+	files()
+	add(5,9)
+	add(5,'d')
+	fibFilter(10)
+	maxList([12,52,2,32,45,456])
+	sumByReduce()
+	fileOperations()
+	fileReverse()
+	anagrams_words(['eat', 'ate', 'done', 'tea', 'soup', 'node'])
+	interchangeKeyValue({'x': 1, 'y': 2, 'z': 3})
+
+
+if __name__ == '__main__':
+	main()
