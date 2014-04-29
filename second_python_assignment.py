@@ -62,3 +62,16 @@ def add(x,y):
 		print "Problem 5=>some random even num=>",random.randrange(2,100,2)
 
 
+'''6) Write a program for following outputs by using map?
+       a. output is [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+       b. output is  [3, 5, 7, 9, 15]'''
+def evnodd(x):
+    if x%2==0:
+        return 1
+    else:
+        return 0
+
+print "Problem 6 (a) =>", map(evnodd, range(10))
+print "Problem 6 (b) =>", map(lambda x: x+2,range(1,9,2))
+
+
