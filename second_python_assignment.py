@@ -92,3 +92,7 @@ def maxList(l):
 		print "Problem 8=> Please pass a list"
 
 
+'''9) Write a program to calculate the sum of the numbers from 1 to 100 by using reduce ?'''
+def sumByReduce():
+	a = reduce(lambda x,y:x+y ,range(1,101))
+	print "Problem 9=>Sum of fist 100 num is ",a
