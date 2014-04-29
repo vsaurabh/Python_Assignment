@@ -78,8 +78,17 @@ print "Problem 6 (b) =>", map(lambda x: x+2,range(1,9,2))
 def fibFilter(n):
     a, b = 0, 1
     for i in range(n):
-    	a, b = b, a+b
-    print b
+    	a, b = a+b, a
+    print a,
+print "Problem 7=>",filter(fibFilter,range(10))
 
-print (filter(fibFilter,range(10)))
+
+'''8) Write a program to determine the maximum of a list of numerical values by using reduce ?'''
+def maxList(l):
+	try:
+		a = reduce(lambda a,b: a if(a>b)else b, l)
+		print "Problem 8=>max num is",a
+	except:
+		print "Problem 8=> Please pass a list"
+
 
