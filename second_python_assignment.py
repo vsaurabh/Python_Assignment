@@ -74,4 +74,12 @@ def evnodd(x):
 print "Problem 6 (a) =>", map(evnodd, range(10))
 print "Problem 6 (b) =>", map(lambda x: x+2,range(1,9,2))
 
+'''7) Write Fibonacci series program by using filter ?'''
+def fibFilter(n):
+    a, b = 0, 1
+    for i in range(n):
+    	a, b = b, a+b
+    print b
+
+print (filter(fibFilter,range(10)))
 
