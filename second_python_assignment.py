@@ -28,3 +28,15 @@
 		([1, 2, 3, 4], [1, 2, 3, 4])
 
 		we are creating a new reference to the the list referenced by original.'''
+
+
+'''3) give programming example of nested function?? Write Fibonaci series program using nested functions??'''
+def fibona(n):
+	def inner(n):
+		list_fib = [1]
+		a,b = 0,1
+		for i in range(n):
+			a, b = b , a+b
+			list_fib.append(b)
+		print "Problem 3=>",list_fib,
+	return inner(n)
