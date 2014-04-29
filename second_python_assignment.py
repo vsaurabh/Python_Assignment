@@ -128,7 +128,28 @@ def fileOperations():
 def fileReverse():
 	try:
 		with open('cat file.txt','r+') as f:
-			for i in reversed(f.readlines()):
-				print "Problem 11 =>",i
+			for line in reversed(f.readlines()):
+				print "Problem 11 =>",line
 	except IOError:
 		print "Problem 11 => Please give the right location of your file"
+
+
+'''12)What will be the output of the following program?
+		def f():
+		    try:
+		        print "a"
+		        return
+		    except:
+		        print "b"
+		    else:
+		        print "c"
+		    finally:
+		        print "d"
+
+		f()'''
+
+
+	'''ANs) Output:
+			a
+			d
+		Because we use return after the try block so it will not execute the else part.'''
