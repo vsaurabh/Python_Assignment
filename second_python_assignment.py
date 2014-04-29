@@ -1,4 +1,4 @@
-import os
+import random,os
 
 '''1) What is compound Object ?? Corelate in terms of deep and shallow copy ??
 	Ans) compound objects are objects which contains objects, like lists or dict or classes.
@@ -52,3 +52,13 @@ def files():
 		print "Problem 4=>", a
 	except:
 		print "Problem 4=> Please give the right location of your directory"
+
+
+'''5) write a program which will perform certain mathematical operations. Write a program in such a manner that it should always return  something ?? Even on failure'''
+def add(x,y):
+	try:
+		print "Problem 5=>",x+y
+	except:
+		print "Problem 5=>some random even num=>",random.randrange(2,100,2)
+
+
